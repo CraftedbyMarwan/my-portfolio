@@ -14,7 +14,7 @@ export default function Navbar() {
     return (
         <nav className="flex flex-col p-4 text-white text-2xl">
             <div className="flex justify-between items-center">
-                <div className="block">
+                <div className="block lg:ml-24">
                     <Link href="/" className="font-serif">MMQ</Link>
                 </div>
                 {/* Desktop menu */}
@@ -24,7 +24,7 @@ export default function Navbar() {
                         {isOpen ? "✖" : "☰"}
                     </button>
                 </div>
-                <div className="hidden md:flex gap-3">
+                <div className="hidden md:flex gap-6 lg:mr-24 justify-between items-center">
                     <Link href='/'>About</Link>
                     <Link href='/'>Projects</Link>
                     <Link href='/'>Contact Me</Link>
