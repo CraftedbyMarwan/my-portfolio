@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Styles } from "@/styles/navbar.js";
 
 
 export default function Navbar() {
@@ -12,10 +13,10 @@ export default function Navbar() {
 
 
     return (
-        <nav className="flex flex-col p-4 text-white text-2xl">
+        <nav className="flex flex-col p-2 text-2xl">
             <div className="flex justify-between items-center">
-                <div className="block lg:ml-24">
-                    <Link href="/" className="font-serif">MMQ</Link>
+                <div className="block mr-4">
+                    <Link href="/" className={`${Styles.Link} font-serif`}>My Portfolio</Link>
                 </div>
                 {/* Desktop menu */}
                 <div className="block md:hidden">
@@ -24,21 +25,21 @@ export default function Navbar() {
                         {isOpen ? "✖" : "☰"}
                     </button>
                 </div>
-                <div className="hidden md:flex gap-6 lg:mr-24 justify-between items-center">
-                    <Link href='/'>About</Link>
-                    <Link href='/'>Projects</Link>
-                    <Link href='/'>Contact Me</Link>
+                <div className="hidden mr-4 md:flex gap-6 justify-between items-center">
+                    <Link className={Styles.Link} href='#about'>About</Link>
+                    <Link className={Styles.Link} href='#projects'>Projects</Link>
+                    <Link className={Styles.Link} href='#contact'>Contact Me</Link>
                 </div>
             </div>
             {/* Dropdown menu */}
             <div
-                className={` border-t  border-t-gray-200 md:hidden flex flex-col mt-2 gap-3 transition-all duration-700 ease-in-out ${ // Added transition classes
-                    isOpen ? 'max-h-screen opacity-100 py-3' : 'max-h-0 opacity-0' // Adjusted max-height and opacity based on isOpen
+                className={` border-t  border-t-gray-200 md:hidden flex flex-col mt-2 gap-3 transition-all duration-700 ease-in-out ${
+                    isOpen ? 'max-h-screen opacity-100 py-3' : 'max-h-0 opacity-0'
                     }`}
             >
-                <Link href='/'>About</Link>
-                <Link href='/'>Projects</Link>
-                <Link href='/'>Contact Me</Link>
+                <Link href='#about'>About</Link>
+                <Link href='#projects'>Projects</Link>
+                <Link href='#contact'>Contact Me</Link>
             </div>
 
         </nav>

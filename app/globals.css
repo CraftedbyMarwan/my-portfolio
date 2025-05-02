@@ -1,9 +1,135 @@
 @import "tailwindcss";
 
 body {
-  background: linear-gradient(to bottom, #111827, #1f2937);
-  color: #ededed;
+  background: #111827;
+  /* background: linear-gradient(to bottom, #111827, #1f2937); */
+  color: #e7e7e9;
   font-family: 'Inter', sans-serif;
   line-height: 1.5;
   min-height: 100vh;
+}
+
+/* Custom styles for the background layer */
+.bg-styled {
+  backdrop-filter: blur(24px);
+  outline: 2px solid white;
+}
+
+/* Custom styles for the blob and its animation */
+.blob-styled {
+  filter: blur(48px);
+  /* Initial position for the animation */
+  transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  animation: blob-bounce 5s infinite ease;
+}
+
+/* Keyframe animation for the blob */
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+}
+
+/* Custom Box Shadow for the Project Card */
+.card-project-shadow {
+  box-shadow: 0 0 0 5px #ffffff80;
+}
+
+/* Custom Hover Box Shadow for the Project Card */
+.card-project-hover-shadow {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Transform for the Project Card on Hover */
+.card-project-hover-transform:hover {
+  transform: scale(1.05);
+}
+
+/* Custom Transform for the SVG icon on Hover */
+.card-project-svg-transform:hover svg {
+  transform: scale(0);
+}
+
+/* Custom styles for the card content background */
+.card-project-content-bg {
+  background-color: #f2f2f2; /* Or match your desired card background color */
+}
+
+/* Custom Transform for the card content (initial state) */
+.card-project-content-transform {
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+
+/* Custom Transform for the card content on Hover */
+.card-project-content-hover-transform:hover .card__content-styled { /* Note the class name matches the JSX below */
+  transform: rotateX(0deg);
+}
+
+/* Ensure smooth transitions for transforms */
+.card-project-transition {
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Custom Box Shadow for the Project Card */
+.card-project-shadow {
+  box-shadow: 0 0 0 5px #ffffff80;
+}
+
+/* Custom Hover Box Shadow for the Project Card */
+.card-project-hover-shadow:hover { /* Apply hover directly to this class */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Transform for the Project Card on Hover */
+.card-project-hover-transform:hover {
+  transform: scale(1.05);
+}
+
+/* Custom styles for the card content background */
+.card-project-content-bg {
+  background-color: #f2f2f2; /* Or match your desired card background color */
+}
+
+/* Custom Transform for the card content (initial state) */
+.card-project-content-transform {
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+
+/* Custom Transform for the card content on Hover */
+.card-project-content-hover-transform:hover .card__content-styled { /* Note the class name matches the JSX below */
+  transform: rotateX(0deg);
+}
+
+/* Ensure smooth transitions for transforms */
+.card-project-transition {
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Custom styles for the media (Image or Icon) initial and hover state */
+.card-project-media {
+    transform: scale(1); /* Initial scale */
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Apply transition here */
+}
+
+/* Custom styles for the media (Image or Icon) on hover */
+.card-project-media-hover:hover .card-project-media {
+    transform: scale(0); /* Scale to 0 on hover */
 }
