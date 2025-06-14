@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion'; // Add this import
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -28,21 +28,22 @@ export default function Projects() {
   };
 
   return (
-    <section id='projects' className="flex flex-col items-center justify-center h-screen px-4">
+    // Changed h-screen to py-24 for reduced vertical spacing
+    <section id='projects' className="flex flex-col items-center justify-center py-24 px-4">
       <div className="container mx-auto ">
         <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
 
         <div className="flex flex-col md:flex-row gap-18 justify-center items-center">
           {projects.map((project) => (
-            <motion.div // Wrap with motion.div
+            <motion.div
               key={project.id}
               className="relative w-full md:w-1/2 lg:w-1/3 aspect-video bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden perspective-1000 card-project-shadow card-project-hover-transform card-project-hover-shadow card-project-transition card-project-media-hover card-project-content-hover-transform"
-              variants={cardVariants} // Apply variants
+              variants={cardVariants}
               initial="hidden"
-              whileInView="visible" // Animate when in view
-              viewport={{ once: true, amount: 0.5 }} // Only animate once when 50% visible
-              whileHover={{ scale: 1.03 }} // Add hover effect
-              transition={{ type: "spring", stiffness: 400, damping: 10 }} // Smooth transition
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               {typeof project.icon === 'string' ? (
                  <img
@@ -62,7 +63,7 @@ export default function Projects() {
                 <p className="flex-grow text-sm text-gray-600 leading-tight">{project.description}</p>
                 <div className="flex gap-3 mt-auto">
                   {project.liveDemoLink && (
-                    <motion.a // Add motion to buttons for individual effects
+                    <motion.a
                       href={project.liveDemoLink}
                       target='_blank'
                       rel="noopener noreferrer"
@@ -74,7 +75,7 @@ export default function Projects() {
                     </motion.a>
                   )}
                   {project.sourceCodeLink && (
-                    <motion.a // Add motion to buttons
+                    <motion.a
                       href={project.sourceCodeLink}
                       target='_blank'
                       rel="noopener noreferrer"
