@@ -48,7 +48,7 @@ export default function Hero() {
             className={Styles.headline}
             variants={itemVariants} // Apply animation to headline
           >
-            Marwan Mohammed <span className=""> Junior Front-End Developer </span>
+            Marwan Mohammed <span className="flex"> Junior Front-End Developer </span>
           </motion.h1>
 
           {/* Tagline */}
