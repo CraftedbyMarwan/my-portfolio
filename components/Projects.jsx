@@ -15,8 +15,8 @@ const projects = [
     name: 'Banking Dashboard',
     description: '**Under Development**: A modern banking dashboard with real-time data visualization.',
     icon:'/imgs/undermain.webp',
-    liveDemoLink: '#', // Keeping '#' as it's under development
-    sourceCodeLink: '#', // Keeping '#' as it's under development
+    liveDemoLink: null,
+    sourceCodeLink: null,
   },
 
 
